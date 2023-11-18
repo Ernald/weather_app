@@ -9,9 +9,10 @@ import org.sda.model.WeatherData;
 
 import java.util.List;
 
+import static org.sda.util.HibernateUtil.sessionFactory;
+
 public class WeatherDataServiceImpl implements WeatherDataService{
     private WeatherDataDao weatherDataDao;
-    private SessionFactory sessionFactory;
 
     public WeatherDataServiceImpl(WeatherDataDao weatherDataDao){
         this.weatherDataDao = weatherDataDao;
@@ -35,7 +36,7 @@ public class WeatherDataServiceImpl implements WeatherDataService{
             session.save(weatherData);
             transaction.commit();
         }catch (Exception e){
-            if (transaction == null){
+            if (transaction != null){
                 transaction.rollback();
             }
         }finally {

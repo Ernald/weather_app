@@ -20,9 +20,10 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="53e15b7c-c814-42e4-8aa4-70864a7d751c" object-ref="consoles/Connection" />
-    </open-files>
+    <open-files />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="53e15b7c-c814-42e4-8aa4-70864a7d751c" dataset="weather_app.weather_data" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
