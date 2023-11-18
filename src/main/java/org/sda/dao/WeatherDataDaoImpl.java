@@ -13,13 +13,12 @@ import java.util.List;
 
 public class WeatherDataDaoImpl implements WeatherDataDao{
     private SessionFactory sessionFactory;
-    Session session = sessionFactory.getCurrentSession();
     public WeatherDataDaoImpl(SessionFactory sessionFactory){
         this.sessionFactory = sessionFactory;
     }
     @Override
     public WeatherData findById(Long id) {
-        session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         return session.get(WeatherData.class, id);
     }
 
@@ -38,20 +37,20 @@ public class WeatherDataDaoImpl implements WeatherDataDao{
 
     @Override
     public void save(WeatherData weatherData) {
-        session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         session.save(weatherData);
 
     }
 
     @Override
     public void update(WeatherData weatherData) {
-        session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         session.update(weatherData);
     }
 
     @Override
     public void delete(WeatherData weatherData) {
-        session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         session.delete(weatherData);
     }
 }

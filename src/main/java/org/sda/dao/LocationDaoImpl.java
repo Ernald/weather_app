@@ -17,13 +17,12 @@ import java.util.UUID;
 
 public class LocationDaoImpl implements LocationDao{
     private SessionFactory sessionFactory;
-    Session session = sessionFactory.getCurrentSession();
     public LocationDaoImpl(SessionFactory sessionFactory){
         this.sessionFactory = sessionFactory;
     }
     @Override
     public Location findById(UUID id) {
-        session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         return session.get(Location.class, id);
     }
 
@@ -47,19 +46,19 @@ public class LocationDaoImpl implements LocationDao{
 
     @Override
     public void save(Location location) {
-        session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         session.save(location);
     }
 
     @Override
     public void update(Location location) {
-        session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         session.update(location);
     }
 
     @Override
     public void delete(Location location) {
-        session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         session.delete(location);
     }
 }

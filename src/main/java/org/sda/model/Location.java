@@ -17,6 +17,9 @@ public class Location {
     public Location() {
     }
 
+    public Location(Double latitude, Double longitude, String region, String country){
+    }
+
     public Location(UUID id, Double latitude, Double longitude, String region, String country) {
         this.id = id;
         this.latitude = latitude;

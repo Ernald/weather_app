@@ -9,9 +9,10 @@ import org.sda.model.Location;
 import java.util.List;
 import java.util.UUID;
 
+import static org.sda.util.HibernateUtil.sessionFactory;
+
 public class LocationServiceImpl implements LocationService{
     private LocationDao locationDao;
-    private SessionFactory sessionFactory;
     public LocationServiceImpl(LocationDao locationDao){
         this.locationDao = locationDao;
     }
@@ -34,7 +35,7 @@ public class LocationServiceImpl implements LocationService{
             session.save(location);
             transaction.commit();
         }catch(Exception e) {
-            if(transaction == null){
+            if(transaction != null){
                 transaction.rollback();
             }
         }finally {
